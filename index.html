@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gokul | Computer Science Student & Aspiring Software Developer</title>
+  <meta name="description" content="Personal portfolio of Gokul, a Computer Science student currently pursuing a Master's in CS after completing BCA. Showcasing software development skills, projects, and academic journey.">
+  <meta name="author" content="Gokul">
+  <meta name="keywords" content="Gokul, Computer Science, BCA, Master's in Computer Science, Software Developer, Portfolio, Web Development, Java, Python, JavaScript, Full Stack">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Gokul | Computer Science Student & Aspiring Software Developer">
+  <meta property="og:description" content="Explore Gokul's portfolio showcasing academic journey, technical skills, projects, and career goals in software engineering.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230284c7'/><text x='50%' y='68%' font-size='56' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>G</text></svg>">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       HEADER & NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Gokul Home">
+        <span class="brand-badge">G</span>
+        <span>Gokul<span class="dot">.dev</span></span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-links" id="desktop-nav" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav CTA & Mobile Toggle -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta-desktop">
+          <i class="fa-regular fa-paper-plane"></i> Let's Connect
+        </a>
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> &nbsp;About</a>
+    <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> &nbsp;Education</a>
+    <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> &nbsp;Skills</a>
+    <a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> &nbsp;Projects</a>
+    <a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> &nbsp;Certifications</a>
+    <a href="#resume" class="nav-link"><i class="fa-solid fa-file-lines"></i> &nbsp;Resume</a>
+    <a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> &nbsp;Contact</a>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">
+        <i class="fa-regular fa-paper-plane"></i> Contact Me
+      </a>
+      <button type="button" class="btn btn-secondary" onclick="openResumeModal()" style="width: 100%;">
+        <i class="fa-solid fa-download"></i> Download Resume
+      </button>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- ========================================================================
+       HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Ambient Particle Canvas Background -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- Glowing Background Blobs -->
+    <div class="hero-glow-blob hero-glow-1" aria-hidden="true"></div>
+    <div class="hero-glow-blob hero-glow-2" aria-hidden="true"></div>
+
+    <div class="container hero-grid">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <!-- Availability Status Badge -->
+        <div class="status-badge floating-element">
+          <span class="pulse-indicator"></span>
+          <span>Open to Software Dev Roles & Internships</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-accent-text">Gokul</span>
+        </h1>
+
+        <!-- Typewriter Animated Tagline -->
+        <div class="typewriter-wrapper">
+          <span id="typewriter-text"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+
+        <p class="hero-desc">
+          A passionate Computer Science student who has completed a <strong>Bachelor of Computer Applications (BCA)</strong> and is currently pursuing a <strong>Master’s in Computer Science</strong>. Dedicated to building efficient software, exploring modern web architectures, and solving real-world computational challenges.
+        </p>
+
+        <!-- CTA Buttons Group (Required: View Projects, Download Resume, Contact Me) -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary" id="btn-view-projects">
+            <i class="fa-solid fa-diagram-project"></i> View Projects
+          </a>
+          <button type="button" class="btn btn-secondary" id="btn-download-resume" onclick="openResumeModal()">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+          </button>
+          <a href="#contact" class="btn btn-outline" id="btn-contact-me">
+            <i class="fa-regular fa-envelope"></i> Contact Me
+          </a>
+        </div>
+
+        <!-- Social Media / Professional Links -->
+        <div class="hero-socials">
+          <span class="hero-socials-label">Connect:</span>
+          <a href="https://github.com/gokul-cs" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/gokul-dev" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:gokul.dev@example.com" class="btn-icon" title="Email Gokul">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="#education" class="btn-icon" title="Academic Background">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Visual (Avatar & Floating Tech Badges) -->
+      <div class="hero-visual">
+        <div class="hero-card-container">
+          <!-- Floating Badge Top Right -->
+          <div class="floating-badge floating-badge-1 floating-element">
+            <div class="badge-icon blue">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <div class="badge-text-title">Master's in CS</div>
+              <div class="badge-text-sub">Currently Pursuing</div>
+            </div>
+          </div>
+
+          <!-- Avatar Image Frame -->
+          <div class="avatar-frame">
+            <img src="assets/images/gokul-avatar.jpg" alt="Portrait illustration of Gokul, Computer Science Student and Software Developer" width="400" height="400">
+          </div>
+
+          <!-- Floating Badge Bottom Left -->
+          <div class="floating-badge floating-badge-2 floating-element-reverse">
+            <div class="badge-icon purple">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <div class="badge-text-title">BCA Graduate</div>
+              <div class="badge-text-sub">Completed with Distinction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ABOUT ME SECTION
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag"><i class="fa-solid fa-user"></i> About Me</div>
+        <h2 class="section-title">Driven by Curiosity, <span class="gradient-text">Fueled by Code</span></h2>
+        <p class="section-subtitle">A glimpse into my mindset, academic dedication, and passion for crafting impactful technology.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Story & Bio Card -->
+        <div class="about-card reveal-on-scroll reveal-delay-1">
+          <h3 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 8px;">
+            Hello, I am Gokul 👋
+          </h3>
+          <div class="about-text">
+            <p>
+              I am a dedicated and curious learner with a deep passion for <span class="highlight">software development, modern web technologies</span>, and computer systems. My journey in technology began with a structured foundation during my <span class="highlight">Bachelor of Computer Applications (BCA)</span>, where I mastered programming fundamentals, database modeling, and software engineering principles.
+            </p>
+            <p>
+              Driven by the aspiration to tackle complex, scalable engineering challenges, I am currently pursuing my <span class="highlight">Master’s in Computer Science</span>. This advanced phase enables me to explore distributed systems, modern web architectures, algorithmic efficiency, and emerging technologies.
+            </p>
+            <p>
+              Beyond academia, I thrive on hands-on project creation—translating theoretical knowledge into intuitive, reliable, and clean software solutions.
+            </p>
+          </div>
+
+          <div style="margin-top: 10px;">
+            <h4 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 12px; font-weight: 600;">
+              Primary Areas of Interest:
+            </h4>
+            <div class="interest-tags">
+              <span class="interest-tag"><i class="fa-solid fa-code" style="color: var(--cyan);"></i> Software Development</span>
+              <span class="interest-tag"><i class="fa-solid fa-globe" style="color: #60a5fa;"></i> Web Technologies</span>
+              <span class="interest-tag"><i class="fa-solid fa-brain" style="color: #c084fc;"></i> Problem Solving & DSA</span>
+              <span class="interest-tag"><i class="fa-solid fa-database" style="color: #34d399;"></i> Database Systems</span>
+              <span class="interest-tag"><i class="fa-solid fa-microchip" style="color: #f472b6;"></i> Emerging Tech</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats & Philosophy Grid -->
+        <div style="display: flex; flex-direction: column; gap: 24px;" class="reveal-on-scroll reveal-delay-2">
+          <!-- Quick Facts Counters -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number" data-target="2" data-suffix="">2</div>
+              <div class="stat-label">Academic Degrees (BCA + Master's)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="12" data-suffix="+">12+</div>
+              <div class="stat-label">Projects & Practical Labs Built</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="15" data-suffix="+">15+</div>
+              <div class="stat-label">Technologies & Frameworks</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-target="100" data-suffix="%">100%</div>
+              <div class="stat-label">Commitment to Growth & Code Quality</div>
+            </div>
+          </div>
+
+          <!-- Values Card -->
+          <div class="about-card" style="padding: 28px;">
+            <h4 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 14px;">
+              Core Engineering Values
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: center; color: var(--cyan); flex-shrink: 0;">
+                  <i class="fa-solid fa-check-double"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">Clean, Maintainable Code</strong>
+                  <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Writing readable, modular, well-documented code designed for scalability.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(99, 102, 241, 0.15); display: flex; align-items: center; justify-content: center; color: #818cf8; flex-shrink: 0;">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">Analytical Problem Solving</strong>
+                  <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Approaching algorithmic and system challenges methodically and with precision.</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(16, 185, 129, 0.15); display: flex; align-items: center; justify-content: center; color: #34d399; flex-shrink: 0;">
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                </div>
+                <div>
+                  <strong style="color: var(--text-primary); font-size: 0.95rem;">Continuous Self-Improvement</strong>
+                  <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Constantly upgrading knowledge with modern industry practices and tech stacks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       EDUCATION SECTION
+       ======================================================================== -->
+  <section class="section" id="education" style="background: rgba(10, 15, 29, 0.4);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Journey</div>
+        <h2 class="section-title">Formal <span class="gradient-text">Education</span></h2>
+        <p class="section-subtitle">Bridging strong foundational computer applications with advanced postgraduate Computer Science principles.</p>
+      </div>
+
+      <div class="education-timeline">
+        <!-- Milestone 1: Master's in Computer Science -->
+        <div class="timeline-item reveal-on-scroll">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="degree-title">Master’s in Computer Science</h3>
+                <div class="timeline-institution">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span>[University / Institution Name Placeholder]</span>
+                </div>
+              </div>
+              <span class="status-tag active">
+                <span class="pulse-indicator" style="width: 8px; height: 8px;"></span> Currently Pursuing
+              </span>
+            </div>
+
+            <p class="timeline-desc">
+              Focusing on advanced computational theory, distributed systems, modern full-stack architectures, algorithm design, and applied machine intelligence. Developing specialized competency in building high-performance, maintainable software systems and conducting research-driven project work.
+            </p>
+
+            <div>
+              <div style="font-size: 0.86rem; color: var(--text-primary); font-weight: 600; margin-bottom: 8px;">
+                Advanced Coursework Highlights:
+              </div>
+              <div class="coursework-container">
+                <span class="course-pill">Advanced Data Structures</span>
+                <span class="course-pill">Distributed Systems</span>
+                <span class="course-pill">Cloud & Web Architectures</span>
+                <span class="course-pill">Database Engineering</span>
+                <span class="course-pill">Design & Analysis of Algorithms</span>
+                <span class="course-pill">Software Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Milestone 2: Bachelor of Computer Applications (BCA) -->
+        <div class="timeline-item reveal-on-scroll reveal-delay-1">
+          <div class="timeline-dot completed">
+            <div class="timeline-dot-inner"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="degree-title">Bachelor of Computer Applications (BCA)</h3>
+                <div class="timeline-institution">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span>[University / College Name Placeholder]</span>
+                </div>
+              </div>
+              <span class="status-tag done">
+                <i class="fa-solid fa-circle-check"></i> Completed
+              </span>
+            </div>
+
+            <p class="timeline-desc">
+              Graduated with a strong academic standing. Acquired a solid foundation across computer science fundamentals, programming languages, database management systems, web development, and object-oriented paradigms. Successfully planned, architected, and submitted capstone academic projects.
+            </p>
+
+            <div>
+              <div style="font-size: 0.86rem; color: var(--text-primary); font-weight: 600; margin-bottom: 8px;">
+                Core Subjects & Foundations:
+              </div>
+              <div class="coursework-container">
+                <span class="course-pill">Object-Oriented Programming (Java/C++)</span>
+                <span class="course-pill">Relational Database Systems (DBMS)</span>
+                <span class="course-pill">Web Development Technologies</span>
+                <span class="course-pill">Data Structures</span>
+                <span class="course-pill">Computer Networks</span>
+                <span class="course-pill">Software Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SKILLS SECTION
+       ======================================================================== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag"><i class="fa-solid fa-laptop-code"></i> Technical Stack</div>
+        <h2 class="section-title">Skills & <span class="gradient-text">Proficiencies</span></h2>
+        <p class="section-subtitle">A balanced toolkit spanning core programming languages, modern web frameworks, database engineering, and developer tooling.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- 1. Programming Languages -->
+        <div class="skill-card reveal-on-scroll">
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div>
+              <h3 class="skill-category-name">Programming Languages</h3>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Core development languages</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-python" style="color: #38bdf8;"></i> Python</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-java" style="color: #f97316;"></i> Java</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-c" style="color: #60a5fa;"></i> C / C++</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 78%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-js" style="color: #facc15;"></i> JavaScript (ES6+)</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 84%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Web Development -->
+        <div class="skill-card reveal-on-scroll reveal-delay-1">
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap" style="color: #60a5fa; background: rgba(96, 165, 250, 0.1); border-color: rgba(96, 165, 250, 0.25);">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <h3 class="skill-category-name">Web Development</h3>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Front-end & Server architecture</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-html5" style="color: #f97316;"></i> HTML5 & Semantic Web</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-css3-alt" style="color: #38bdf8;"></i> CSS3 & Modern Layouts</span>
+                <span class="skill-level">Advanced</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-react" style="color: #06b6d4;"></i> React.js Basics</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-node" style="color: #22c55e;"></i> Node.js & Express</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 76%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Databases -->
+        <div class="skill-card reveal-on-scroll reveal-delay-2">
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap" style="color: #34d399; background: rgba(52, 211, 153, 0.1); border-color: rgba(52, 211, 153, 0.25);">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <h3 class="skill-category-name">Databases & Storage</h3>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Relational & NoSQL systems</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-database" style="color: #38bdf8;"></i> MySQL</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-server" style="color: #818cf8;"></i> PostgreSQL</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-leaf" style="color: #22c55e;"></i> MongoDB</span>
+                <span class="skill-level">Working Knowledge</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 72%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-diagram-project" style="color: #f59e0b;"></i> Database Schema Design</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Software Development & Core CS -->
+        <div class="skill-card reveal-on-scroll">
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap" style="color: #a855f7; background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.25);">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <div>
+              <h3 class="skill-category-name">Software Engineering & CS</h3>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Fundamental principles & paradigms</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-sitemap" style="color: #a855f7;"></i> Data Structures & Algorithms</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 84%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-shapes" style="color: #38bdf8;"></i> Object-Oriented Design (OOP)</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-network-wired" style="color: #34d399;"></i> Computer Networks & Protocols</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-gears" style="color: #fb923c;"></i> Software Lifecycle (SDLC)</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Git & GitHub -->
+        <div class="skill-card reveal-on-scroll reveal-delay-1">
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap" style="color: #f97316; background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.25);">
+              <i class="fa-brands fa-git-alt"></i>
+            </div>
+            <div>
+              <h3 class="skill-category-name">Git & GitHub</h3>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Source control & team workflows</span>
+            </div>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-git-alt" style="color: #f97316;"></i> Git CLI & Branching</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-brands fa-github" style="color: #f8fafc;"></i> GitHub Pull Requests & Issues</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-code-merge" style="color: #818cf8;"></i> Merge & Conflict Resolution</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name"><i class="fa-solid fa-circle-play" style="color: #38bdf8;"></i> CI/CD Basics (GitHub Actions)</span>
+                <span class="skill-level">Learning</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 65%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Developer Tools & Platforms -->
+        <div class="skill-card reveal-on-scroll reveal-delay-2">
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap" style="color: #38bdf8; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.25);">
+              <i class="fa-solid fa-toolbox"></i>
+            </div>
+            <div>
+              <h3 class="skill-category-name">Tools & Platforms</h3>
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Workflow tools & environment</span>
+            </div>
+          </div>
+          <div class="skill-badges-grid">
+            <span class="skill-badge"><i class="fa-solid fa-terminal" style="color: #34d399;"></i> Linux / Bash</span>
+            <span class="skill-badge"><i class="fa-solid fa-code" style="color: #38bdf8;"></i> VS Code</span>
+            <span class="skill-badge"><i class="fa-solid fa-bolt" style="color: #f97316;"></i> Postman API</span>
+            <span class="skill-badge"><i class="fa-brands fa-docker" style="color: #60a5fa;"></i> Docker Basics</span>
+            <span class="skill-badge"><i class="fa-brands fa-npm" style="color: #ef4444;"></i> NPM / Node</span>
+            <span class="skill-badge"><i class="fa-solid fa-cloud" style="color: #818cf8;"></i> Vercel / Netlify</span>
+            <span class="skill-badge"><i class="fa-solid fa-shield-halved" style="color: #facc15;"></i> REST APIs</span>
+            <span class="skill-badge"><i class="fa-solid fa-layer-group" style="color: #a855f7;"></i> Agile / Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PROJECTS SECTION
+       ======================================================================== -->
+  <section class="section" id="projects" style="background: rgba(10, 15, 29, 0.4);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag"><i class="fa-solid fa-diagram-project"></i> Portfolio Works</div>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">Real-world web applications and computational projects developed during my academic journey.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="projects-filter-bar reveal-on-scroll">
+        <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+        <button type="button" class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button type="button" class="filter-btn" data-filter="web">Web Apps</button>
+        <button type="button" class="filter-btn" data-filter="algorithms">Core CS & Algorithms</button>
+      </div>
+
+      <!-- Dynamic Project Cards Container -->
+      <div class="projects-grid" id="projects-container">
+        <!-- Injected dynamically by js/projects.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CERTIFICATIONS & ACHIEVEMENTS SECTION
+       ======================================================================== -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag"><i class="fa-solid fa-award"></i> Verification & Badges</div>
+        <h2 class="section-title">Certifications & <span class="gradient-text">Achievements</span></h2>
+        <p class="section-subtitle">Continuous professional learning, technical certifications, and academic recognitions.</p>
+      </div>
+
+      <div class="cert-grid">
+        <!-- Cert 1 -->
+        <div class="cert-card reveal-on-scroll">
+          <div class="cert-header">
+            <div class="cert-icon"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <h3 class="cert-title">Full-Stack Web Development</h3>
+              <div class="cert-issuer">Online Learning Platform / Tech Academy</div>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Comprehensive curriculum covering responsive UI construction, asynchronous JavaScript, Node.js REST APIs, and database connectivity with real-world deployments.
+          </p>
+          <div class="cert-footer">
+            <span>Completed 2025</span>
+            <a href="#certifications" class="cert-verify-link" title="Credential ID: [CERT-FSW-8492]">
+              Credential ID <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="cert-card reveal-on-scroll reveal-delay-1">
+          <div class="cert-header">
+            <div class="cert-icon" style="color: #818cf8; background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.25);">
+              <i class="fa-solid fa-sitemap"></i>
+            </div>
+            <div>
+              <h3 class="cert-title">Data Structures & Algorithms</h3>
+              <div class="cert-issuer">Computer Science Specialization</div>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Rigorous training in asymptotic complexity analysis, graph algorithms, dynamic programming, sorting mechanisms, and recursion patterns in Java & Python.
+          </p>
+          <div class="cert-footer">
+            <span>Completed 2024</span>
+            <a href="#certifications" class="cert-verify-link" title="Credential ID: [CERT-DSA-3011]">
+              Credential ID <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="cert-card reveal-on-scroll reveal-delay-2">
+          <div class="cert-header">
+            <div class="cert-icon" style="color: #34d399; background: rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.25);">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <h3 class="cert-title">Relational Database & SQL Design</h3>
+              <div class="cert-issuer">Database Standards Certification</div>
+            </div>
+          </div>
+          <p class="cert-desc">
+            In-depth study of schema normalization, multi-table joins, subqueries, transaction isolation levels (ACID), and database performance indexing.
+          </p>
+          <div class="cert-footer">
+            <span>Completed 2024</span>
+            <a href="#certifications" class="cert-verify-link" title="Credential ID: [CERT-DB-9182]">
+              Credential ID <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Achievement 1 -->
+        <div class="cert-card reveal-on-scroll">
+          <div class="cert-header">
+            <div class="cert-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.25);">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+              <h3 class="cert-title">Academic Merit Award</h3>
+              <div class="cert-issuer">BCA Program Recognition</div>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Ranked among the top 5% academic performers across the department during the Bachelor of Computer Applications program.
+          </p>
+          <div class="cert-footer">
+            <span>Conferred 2024</span>
+            <span style="color: var(--text-muted);">Academic Merit</span>
+          </div>
+        </div>
+
+        <!-- Achievement 2 -->
+        <div class="cert-card reveal-on-scroll reveal-delay-1">
+          <div class="cert-header">
+            <div class="cert-icon" style="color: #ec4899; background: rgba(236, 72, 153, 0.15); border-color: rgba(236, 72, 153, 0.25);">
+              <i class="fa-solid fa-medal"></i>
+            </div>
+            <div>
+              <h3 class="cert-title">Inter-College Hackathon Finalist</h3>
+              <div class="cert-issuer">Tech Festival Innovation Challenge</div>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Collaborated in a 48-hour sprint to conceptualize, prototype, and present a smart campus digital resource management portal.
+          </p>
+          <div class="cert-footer">
+            <span>Achievement 2025</span>
+            <span style="color: var(--text-muted);">Finalist Team</span>
+          </div>
+        </div>
+
+        <!-- Cert Placeholder -->
+        <div class="cert-card reveal-on-scroll reveal-delay-2">
+          <div class="cert-header">
+            <div class="cert-icon" style="color: #06b6d4; background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.25);">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div>
+              <h3 class="cert-title">Cloud Computing Fundamentals</h3>
+              <div class="cert-issuer">[Cloud Provider Placeholder]</div>
+            </div>
+          </div>
+          <p class="cert-desc">
+            Foundations of cloud infrastructure, serverless functions, virtualization, containerization, and deployment best practices.
+          </p>
+          <div class="cert-footer">
+            <span>In Progress</span>
+            <span style="color: var(--cyan);"><i class="fa-solid fa-spinner fa-spin"></i> Enrolled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       RESUME & CAREER GOALS SECTION
+       ======================================================================== -->
+  <section class="section" id="resume">
+    <div class="container">
+      <div class="resume-container reveal-on-scroll">
+        <!-- Left: Goals & Vision -->
+        <div class="resume-content">
+          <div class="section-tag" style="margin-bottom: 12px;"><i class="fa-solid fa-bullseye"></i> Career Aspirations</div>
+          <h3 style="font-size: 2.2rem; color: var(--text-primary);">
+            Ready to Contribute & <span class="gradient-accent-text">Innovate</span>
+          </h3>
+          <p>
+            My immediate career objective is to join a forward-thinking engineering team as a <strong>Software Developer Intern or Entry-Level Software Engineer</strong>. Having transitioned from a foundational BCA degree to pursuing an advanced Master's in Computer Science, I bring structured programming discipline, adaptability to modern frameworks, and relentless passion for tackling meaningful problems.
+          </p>
+
+          <div class="career-pillars">
+            <div class="pillar-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Full-Stack Software Engineering</span>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Scalable Backend Systems</span>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Robust Database Architecture</span>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Collaborative Agile Development</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" onclick="openResumeModal()">
+              <i class="fa-solid fa-eye"></i> View Resume Online
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="downloadResumeFile()">
+              <i class="fa-solid fa-file-arrow-down"></i> Download Resume (PDF)
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Resume Visual Card Preview -->
+        <div class="resume-card-preview">
+          <div class="resume-icon-badge">
+            <i class="fa-solid fa-file-invoice"></i>
+          </div>
+          <div>
+            <h4 class="resume-preview-title">Gokul — Official Resume</h4>
+            <p class="resume-preview-sub">Latest 2026 Academic & Technical Edition</p>
+          </div>
+          <div class="resume-btn-group">
+            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openResumeModal()">
+              <i class="fa-solid fa-expand"></i> Quick Interactive Preview
+            </button>
+            <button type="button" class="btn btn-outline" style="width: 100%;" onclick="downloadResumeFile()">
+              <i class="fa-solid fa-print"></i> Print / Save Document
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CONTACT SECTION
+       ======================================================================== -->
+  <section class="section" id="contact" style="background: rgba(10, 15, 29, 0.4);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</div>
+        <h2 class="section-title">Let’s Start a <span class="gradient-text">Conversation</span></h2>
+        <p class="section-subtitle">Interested in collaborating, discussing internship roles, or simply talking tech? Feel free to reach out!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Cards -->
+        <div class="contact-info-cards reveal-on-scroll">
+          <!-- Email -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div class="contact-card-title">Email Address</div>
+              <a href="mailto:gokul.dev@example.com" class="contact-card-value">
+                gokul.dev@example.com
+              </a>
+            </div>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="contact-card">
+            <div class="contact-card-icon" style="color: #60a5fa; background: rgba(96, 165, 250, 0.12);">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div>
+              <div class="contact-card-title">LinkedIn Profile</div>
+              <a href="https://linkedin.com/in/gokul-dev" target="_blank" rel="noopener noreferrer" class="contact-card-value">
+                linkedin.com/in/gokul-dev
+              </a>
+            </div>
+          </div>
+
+          <!-- GitHub -->
+          <div class="contact-card">
+            <div class="contact-card-icon" style="color: #f8fafc; background: rgba(255, 255, 255, 0.08);">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div>
+              <div class="contact-card-title">GitHub Code Repository</div>
+              <a href="https://github.com/gokul-cs" target="_blank" rel="noopener noreferrer" class="contact-card-value">
+                github.com/gokul-cs
+              </a>
+            </div>
+          </div>
+
+          <!-- Location & Availability -->
+          <div class="contact-card">
+            <div class="contact-card-icon" style="color: #34d399; background: rgba(52, 211, 153, 0.12);">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <div class="contact-card-title">Current Location & Availability</div>
+              <div class="contact-card-value">[City, Country Placeholder]</div>
+              <div style="font-size: 0.82rem; color: #34d399; margin-top: 3px;">
+                <i class="fa-solid fa-circle-dot"></i> Open to Remote & On-Site Opportunities
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-card reveal-on-scroll reveal-delay-1">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div style="margin-bottom: 6px;">
+              <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 6px;">
+                Send Gokul a Message
+              </h3>
+              <p style="font-size: 0.92rem; color: var(--text-muted);">
+                Fill out the form below and I will respond as promptly as possible.
+              </p>
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name <span style="color: var(--cyan);">*</span></label>
+              <input type="text" id="contact-name" class="form-control" placeholder="e.g. Alex Taylor" required autocomplete="name">
+              <span class="form-feedback">Please enter your name (at least 2 characters).</span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Your Email <span style="color: var(--cyan);">*</span></label>
+              <input type="email" id="contact-email" class="form-control" placeholder="e.g. alex@company.com" required autocomplete="email">
+              <span class="form-feedback">Please provide a valid email address.</span>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject <span style="color: var(--cyan);">*</span></label>
+              <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Internship Opportunity / Project Collaboration" required>
+              <span class="form-feedback">Please specify a subject (at least 3 characters).</span>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message <span style="color: var(--cyan);">*</span></label>
+              <textarea id="contact-message" class="form-control" placeholder="Hi Gokul, I came across your portfolio and would like to connect regarding..." required></textarea>
+              <span class="form-feedback">Please enter a message (at least 8 characters).</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="contact-submit-btn" style="width: 100%;">
+              <i class="fa-regular fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <a href="#hero" class="brand-logo" style="margin-bottom: 8px; display: inline-flex;">
+            <span class="brand-badge">G</span>
+            <span>Gokul<span class="dot">.dev</span></span>
+          </a>
+          <p style="color: var(--text-muted); font-size: 0.92rem; max-width: 400px;">
+            Computer Science Master’s Student & Aspiring Software Developer dedicated to building scalable and human-centric software.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Gokul. All rights reserved. Designed & built with HTML5, CSS3, and JavaScript.
+        </div>
+        <button type="button" class="back-to-top-btn" id="back-to-top">
+          <span>Back to top</span>
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PROJECT DETAILS MODAL
+       ======================================================================== -->
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="project-modal-title">Project Details</h3>
+        <button type="button" class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="project-modal-body">
+        <!-- Injected dynamically -->
+      </div>
+      <div class="modal-footer">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="project-modal-github">
+          <i class="fa-brands fa-github"></i> View GitHub Repo
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="project-modal-demo">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Demo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       RESUME MODAL
+       ======================================================================== -->
+  <div class="modal" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="modal-dialog" style="max-width: 860px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="resume-modal-title">
+          <i class="fa-solid fa-file-lines" style="color: var(--cyan); margin-right: 8px;"></i> Curriculum Vitae — Gokul
+        </h3>
+        <button type="button" class="modal-close" onclick="closeResumeModal()" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="resume-paper">
+          <!-- Summary in Modal -->
+          <div style="border-bottom: 1px solid rgba(148, 163, 184, 0.2); padding-bottom: 16px; margin-bottom: 16px;">
+            <h2 style="font-size: 1.5rem; color: var(--text-primary);">Gokul</h2>
+            <p style="color: var(--cyan); font-weight: 600; font-size: 1rem;">Computer Science Student | Aspiring Software Developer</p>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; display: flex; gap: 16px; flex-wrap: wrap;">
+              <span><i class="fa-solid fa-envelope"></i> gokul.dev@example.com</span>
+              <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/gokul-dev</span>
+              <span><i class="fa-brands fa-github"></i> github.com/gokul-cs</span>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 18px;">
+            <h4 style="font-size: 1.05rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+              Education
+            </h4>
+            <div style="margin-bottom: 10px;">
+              <div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--text-primary);">
+                <span>Master’s in Computer Science</span>
+                <span style="color: var(--cyan); font-family: var(--font-code); font-size: 0.82rem;">Currently Pursuing</span>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">[University Name Placeholder] • Focus on Advanced Algorithms, Web Architecture & Systems</p>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-weight: 600; color: var(--text-primary);">
+                <span>Bachelor of Computer Applications (BCA)</span>
+                <span style="color: #a5b4fc; font-family: var(--font-code); font-size: 0.82rem;">Completed</span>
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">[University Name Placeholder] • First Class with Distinction • Core CS & Software Development</p>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 18px;">
+            <h4 style="font-size: 1.05rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+              Technical Skills
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              <strong>Languages:</strong> Python, Java, C/C++, JavaScript (ES6+), SQL, HTML5, CSS3<br>
+              <strong>Frameworks & Libraries:</strong> React.js, Node.js, Express, REST APIs, Bootstrap<br>
+              <strong>Databases:</strong> MySQL, PostgreSQL, MongoDB, Schema Optimization<br>
+              <strong>Tools & Version Control:</strong> Git, GitHub, VS Code, Postman, Linux / Bash
+            </p>
+          </div>
+
+          <div>
+            <h4 style="font-size: 1.05rem; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
+              Featured Projects
+            </h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 4px;">
+              • <strong>TaskFlow:</strong> Full-Stack cloud agile task & sprint management dashboard (React, Node, PostgreSQL).
+            </p>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 4px;">
+              • <strong>CodeSphere:</strong> Real-time browser collaborative code editor and runner (JavaScript, WebSockets).
+            </p>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">
+              • <strong>AlgoStruct:</strong> Interactive algorithmic visualization of data structures and graph paths.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeResumeModal()">Close</button>
+        <button type="button" class="btn btn-primary" onclick="downloadResumeFile()">
+          <i class="fa-solid fa-file-arrow-down"></i> Open Printable Resume / PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION
+       ======================================================================== -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message">Message sent successfully!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
